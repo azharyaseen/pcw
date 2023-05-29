@@ -1,0 +1,276 @@
+{% extends 'base.html' %}
+{% block search %} 
+
+<section id="hero" class="d-flex align-items-center">
+   <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-xl-7 col-lg-9 text-center">
+        <h1>We are Here To Find Best Prices For You</h1>
+        <h2 class="my-4">We have worked a lot only For your </h2>
+      </div>
+    </div>
+    <form method="get" action="search">
+      {% csrf_token %}
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control rounded"
+          placeholder="Search"
+          name="query"
+          id="search"
+          aria-label="Search"
+          aria-describedby="search-addon"
+        />
+        <button type="submit" class="btn btn-primary">Compare</button>
+      </div>
+    </form>
+
+    <div class="row icon-boxes">
+      {% comment %} {% if ebay_data %}
+        {% for title, price, reviews, link , image in ebay_data.data|slice:":4" %}
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 my-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <div class="icon"><img class="" src="{{ image }}"></div>
+            <h4 class="title"><a href="{{ link }}" target="_blank">{{ title }}</a></h4>
+            <p class="description">{{ price }}</p>
+            <p class="description">{{ reviews }}</p>
+
+          </div>
+        </div>
+        {% endfor %}
+     {% endif %}       
+    </div>
+  </div> {% endcomment %}
+
+</section>
+{% endblock %}
+
+{% block faqs %}
+<section id="faq" class="faq section-bg">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          Find the answers for the most frequently asked questions below
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <ul>
+          <li data-aos="fade-up">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              class="collapse"
+              data-bs-target="#faq-list-1"
+              >What is a price comparison website?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-1"
+              class="collapse show"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                A price comparison website is a platform that allows
+                consumers to compare prices for a particular product or
+                service across multiple retailers.
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="100">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              data-bs-target="#faq-list-2"
+              class="collapsed"
+              >How do I use a price comparison website?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-2"
+              class="collapse"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                To use a price comparison website, simply enter the product
+                or service you are looking for into the search bar, and the
+                website will display a list of retailers that sell that
+                product or service, along with their prices. You can then
+                compare the prices and choose the best deal.
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="200">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              data-bs-target="#faq-list-3"
+              class="collapsed"
+              >Is using a price comparison website free?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-3"
+              class="collapse"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                Yes, most price comparison websites are free for consumers
+                to use. They make money by receiving a commission from the
+                retailers for any purchases made through the website
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="300">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              data-bs-target="#faq-list-4"
+              class="collapsed"
+              >How accurate are the prices on price comparison websites?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-4"
+              class="collapse"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                Prices on price comparison websites are generally accurate,
+                as they are updated in real-time. However, there may be
+                occasional discrepancies due to delays in updating prices or
+                technical issues.
+              </p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="400">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              data-bs-target="#faq-list-5"
+              class="collapsed"
+              >Are all retailers included on price comparison websites?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-5"
+              class="collapse"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                No, not all retailers are included on price comparison
+                websites. Some retailers may choose not to participate,
+                while others may only be included on certain websites.
+              </p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="400">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              data-bs-target="#faq-list-6"
+              class="collapsed"
+              >Can I buy products directly from a price comparison website?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-6"
+              class="collapse"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                No, price comparison websites do not sell products directly.
+                They simply provide information on where to find the best
+                prices for a particular product or service
+              </p>
+            </div>
+          </li>
+
+          <li data-aos="fade-up" data-aos-delay="400">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              data-bs-target="#faq-list-7"
+              class="collapsed"
+              >Can I trust the reviews on price comparison websites?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-7"
+              class="collapse"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                Reviews on price comparison websites are typically submitted
+                by other consumers, and as such, their accuracy and
+                reliability can vary. It's always a good idea to read
+                multiple reviews and use your own judgment when making a
+                purchasing decision
+              </p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="400">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              data-bs-target="#faq-list-8"
+              class="collapsed"
+            >
+              How do I know if I'm getting the best deal on a price
+              comparison website?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-8"
+              class="collapse"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                It's important to compare prices across multiple websites
+                and retailers to ensure you are getting the best deal. It's
+                also a good idea to check for any additional discounts or
+                promo codes that may be available.
+              </p>
+            </div>
+          </li>
+          <li data-aos="fade-up" data-aos-delay="400">
+            <i class="bx bx-help-circle icon-help"></i>
+            <a
+              data-bs-toggle="collapse"
+              data-bs-target="#faq-list-9"
+              class="collapsed"
+              >What types of products and services can I compare on price
+              comparison websites?
+              <i class="bx bx-chevron-down icon-show"></i
+              ><i class="bx bx-chevron-up icon-close"></i
+            ></a>
+            <div
+              id="faq-list-9"
+              class="collapse"
+              data-bs-parent=".faq-list"
+            >
+              <p>
+                Price comparison websites can be used to compare prices for
+                a wide range of products and services, including
+                electronics, clothing, travel, insurance, and more.
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+{% endblock  %}
